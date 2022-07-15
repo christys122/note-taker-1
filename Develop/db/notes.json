@@ -1,0 +1,39 @@
+{
+  "notes": [
+    {
+      "title": "Title",
+      "text": "Test text",
+      "id": "0"
+    },
+    {
+      "title": "Title2 hardcoded",
+      "text": "Test text 2 hard coded",
+      "id": "1"
+    },
+    {
+      "title": "title2",
+      "text": "notes test 2",
+      "id": "2"
+    },
+    {
+      "title": "title2",
+      "text": "notes test 2",
+      "id": "3"
+    },
+    {
+      "title": "title2",
+      "text": "notes test 2",
+      "id": "4"
+    },
+    {
+      "title": "title2",
+      "text": "notes test 2",
+      "id": "5"
+    },
+    {
+      "title": "title2",
+      "text": "notes test 2",
+      "id": "6"
+    }
+  ]
+}
