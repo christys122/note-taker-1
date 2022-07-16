@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const express = require('express');
-const { notes } = require('./Develop/db/notes.json');
+const { notes } = require('./Develop/db/db.json');
 const PORT = process.env.PORT || 3001;
 const app = express();
 
@@ -61,7 +61,7 @@ function validateNote(note) {
 }
 
 
-app.get('/api/notes', (req, res) => {
+app.get('/api/db', (req, res) => {
     let results = notes;
     if (req.query) {
         results = filterByQuery(req.query, results);
@@ -69,7 +69,7 @@ app.get('/api/notes', (req, res) => {
     res.json(results);
 });
 
-app.get('/api/notes/:id', (req, res) => {
+app.get('/api/db/:id', (req, res) => {
     const result = findById(req.params.id, notes);
     if (result) {
         res.json(result);
@@ -78,7 +78,7 @@ app.get('/api/notes/:id', (req, res) => {
     }
 });
 
-app.post('/api/notes', (req, res) => {
+app.post('/api/db', (req, res) => {
     //req body is incoming content length sets id to add 1 number to existing
     req.body.id = notes.length.toString();
     //add note to json file and notesArray
@@ -94,7 +94,7 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, './public/index.html'));
 });
 
-app.get('/notes', (req, res) => {
+app.get('/db', (req, res) => {
     res.sendFile(path.join(__dirname, './public/notes.html'));
 });
 
@@ -105,3 +105,10 @@ app.get('*', (req, res) => {
 app.listen(PORT, () => {
     console.log(`API server now on port ${PORT}!`);
 });
+
+// module.exports = {
+//     filterByQuery,
+//     findById,
+//     createNewNote,
+//     validateNote
+// };

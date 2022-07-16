@@ -1,10 +1,13 @@
+// const fs = require("fs");
+// const path = require("path");
+
 let noteTitle;
 let noteText;
 let saveNoteBtn;
 let newNoteBtn;
 let noteList;
 
-if (window.location.pathname === '../notes') {
+if (window.location.pathname === '/db') {
   noteTitle = document.querySelector('.note-title');
   noteText = document.querySelector('.note-textarea');
   saveNoteBtn = document.querySelector('.save-note');
@@ -26,7 +29,7 @@ const hide = (elem) => {
 let activeNote = {};
 
 const getNotes = () =>
-  fetch('/api/notes', {
+  fetch('/api/db', {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -34,7 +37,7 @@ const getNotes = () =>
   });
 
 const saveNote = (note) =>
-  fetch('/api/notes', {
+  fetch('/api/db', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -43,7 +46,7 @@ const saveNote = (note) =>
   });
 
 const deleteNote = (id) =>
-  fetch(`/api/notes/${id}`, {
+  fetch(`/api/db/${id}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
@@ -119,7 +122,7 @@ const handleRenderSaveBtn = () => {
 // Render the list of note titles
 const renderNoteList = async (notes) => {
   let jsonNotes = await notes.json();
-  if (window.location.pathname === '/notes') {
+  if (window.location.pathname === '/db') {
     noteList.forEach((el) => (el.innerHTML = ''));
   }
 console.log(jsonNotes);
@@ -165,7 +168,7 @@ console.log(jsonNotes);
     noteListItems.push(li);
   });
 
-  if (window.location.pathname === '/notes') {
+  if (window.location.pathname === '/db') {
     noteListItems.forEach((note) => noteList[0].append(note));
   }
 };
@@ -173,7 +176,7 @@ console.log(jsonNotes);
 // Gets notes from the db and renders them to the sidebar
 const getAndRenderNotes = () => getNotes().then(renderNoteList);
 
-if (window.location.pathname === '/notes') {
+if (window.location.pathname === '/db') {
   saveNoteBtn.addEventListener('click', handleNoteSave);
   newNoteBtn.addEventListener('click', handleNewNoteView);
   noteTitle.addEventListener('keyup', handleRenderSaveBtn);
@@ -181,3 +184,10 @@ if (window.location.pathname === '/notes') {
 }
 
 getAndRenderNotes();
+
+// module.exports = {
+//   filterByQuery,
+//   findById,
+//   createNewNote,
+//   validateNote
+// };
