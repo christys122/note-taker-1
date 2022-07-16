@@ -1,44 +1,19 @@
 {
   "notes": [
     {
-      "title": "Title",
-      "text": "Test text",
+      "title": "Create ReadMe",
+      "text": "Use generator to complete this task",
       "id": "0"
     },
     {
-      "title": "Title2 hardcoded",
-      "text": "Test text 2 hard coded",
+      "title": "Make Video",
+      "text": "Get a video of project and save",
       "id": "1"
     },
-    {
-      "title": "title2",
-      "text": "notes test 2",
-      "id": "2"
-    },
-    {
-      "title": "title2",
-      "text": "notes test 2",
-      "id": "3"
-    },
-    {
-      "title": "title2",
-      "text": "notes test 2",
-      "id": "4"
-    },
-    {
-      "title": "title2",
-      "text": "notes test 2",
-      "id": "5"
-    },
-    {
-      "title": "title2",
-      "text": "notes test 2",
-      "id": "6"
-    },
-    {
-      "title": "dfsfdsfs",
-      "text": "ldflsjdfljs",
-      "id": "7"
-    }
+ 
+   
+   
+
+      
   ]
 }
