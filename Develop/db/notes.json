@@ -9,11 +9,11 @@
       "title": "Make Video",
       "text": "Get a video of project and save",
       "id": "1"
+    },
+    {
+      "title": "new",
+      "text": "new note",
+      "id": "2"
     }
- 
-   
-   
-
-      
   ]
 }
